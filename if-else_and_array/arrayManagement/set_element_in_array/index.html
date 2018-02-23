@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>set element to array</title>
+</head>
+<body>
+  <div id="app">
+    <p>
+      <input type="text" v-model="newPhone" />
+      <button v-on:click="phones.push(newPhone)">Добавить</button>
+    </p>
+    <ul>
+      <li v-for="phone in phones">
+        <p>{{phone}}</p>
+      </li>
+    </ul>
+    <button v-on:click="updateList">Обновить</button>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //Для установки значения нам надо использовать метод Vue.set():
+      //Vue.set(массив, индекс_элемента, новое_значение);
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        newPhone: '',
+        phones: ['iPhone 7', 'Galaxy S8', 'Nokia N8', 'Xiaomi Mi6']
+      },
+      methods: {
+        updateList: function(){
+          Vue.set(this.phones, 1, 'Samsung Galaxy S8');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

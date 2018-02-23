@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>watch</title>
+</head>
+<body>
+  <div id="app">
+    <p>Введите число:
+      <input v-model="number">
+    </p>
+    <p>{{result}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        number: '',
+        result: ''
+      },
+      watch: {
+        number: function(newNumber){
+          if(newNumber > 0){
+            this.factorial(newNumber);
+          }
+        }
+      },
+      methods: {
+        factorial: function(newNumber){
+          this.result = 'Идет вычисление факториала...';
+          let vm = this;
+          setTimeout(function(){
+            let res = 1, i = 1;
+            for(i; i <= newNumber; i++){
+              res *= i;
+            }
+            vm.result = `Факториал числа ${newNumber} равен ${res}`;
+          }, 2000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on2 methods</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="increase">+</button>
+    <button v-on:click="decrease">-</button>
+    <p>{{counter}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+//Однако в случае более сложных операций такой подход не является оптимальным.
+  //И в этом случае, как правило, все операции, которые надо вызывать
+  //при возникновении события, выносятся в отдельные методы объекта Vue. Например, перепишем предыдущий пример:
+    let app = new Vue ({
+      el: '#app',
+      data: {counter: 0},
+      methods: {
+        increase: function(){
+          this.counter++;
+        },
+        decrease: function(){
+          if(this.counter > 0){
+            this.counter--;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

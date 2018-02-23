@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>visible2</title>
+</head>
+<body>
+  <div id="app">
+    <p v-if="visible">Первый параграф</p>
+    <p v-else>Второй параграф</p>
+    <button v-on:click="visible=!visible">{{visible ? 'К параграфу 2' : 'К параграфу 1'}}</button>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //директива v-if. Она позволяет отобразить или скрыть элемент html по условию.
+
+    //В паре с директивой v-if может использоваться директива v-else,
+      //которая позволяет отобразить другой элемент, если условие в директиве v-if равно false:
+    let app = new Vue({
+      el: '#app',
+      data: {
+        visible: true
+      }
+    });
+  </script>
+</body>
+</html>

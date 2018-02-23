@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>firsr app</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-on:input="setMessage" />
+    <p>{{message}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Для создания объекта приложения в Vue.js применяется объект Vue.
+    //Этот объект, во-первых, определяет корневой элемент приложения на веб-странице с помощью параметра el:
+    //el: '#app'
+
+  //Также объект определяет используемые данные через параметр data:
+    //В данном случае определено только свойство message, которая хранит строку.
+    //data: {message: 'Hello Vue!'}
+
+  //В элементе с id=app на веб-странице, используя двойные фигурные скобки
+    //мы можем вывести значение свойства message и более того связать участок веб-станицы с этим элементом.
+    //<p>{{message}}</p>
+
+  //Последний параметр объекта Vue - methods определяет действия, которые выполняются в приложении:
+    //   methods: {
+    //     setMessage: function(event){
+    //         this.message = event.target.value;
+    //     }
+    // }
+
+  //Для связи элемента input с этим методом определяется атрибут v-on:input="setMessage".
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        message: 'Hello world!'
+      },
+      methods: {
+        setMessage: function(event){
+          this.message = event.target.value;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

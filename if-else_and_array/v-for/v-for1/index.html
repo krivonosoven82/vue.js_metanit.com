@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for1</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="phone in phones">{{phone}}</li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Для рендеринга коллекций предназначена директива v-for. Она имеет следующий синтаксис:
+    //v-for="item in items"
+    //Где items представляет массив, а item псевдоним для текущего перебираемого элемента из массива items.
+    //Таким образом, для каждого элемента в массиве phones будет создаваться html-элемент <li>.
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        phones: ['iPhone 7', 'Galaaxy S8', 'Nokia N8', 'Xiaomi mi6']
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>visible</title>
+</head>
+<body>
+  <div id="app">
+    <div v-show="visible">
+      <h2>Заголовок</h2>
+      <p>Текст</p>
+    </div>
+    <button v-on:click="visible=!visible">{{visible ? 'Скрыть' : 'Отобразить'}}</button>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //Директива v-show аналогично v-if позволяет скрывать или отображать элементы по определенному условию:
+    //Но в отличие от v-if директива v-show не изменяет структуру DOM,
+      //а манипулирует значением стилевого свойства display.
+      //То есть если условие в v-show возвращает false, то для элемента устанавливается стиль display:none;,
+      // и тем самым данный элемент скрывается на веб-странице.
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        visible: true
+      }
+    });
+  </script>
+</body>
+</html>

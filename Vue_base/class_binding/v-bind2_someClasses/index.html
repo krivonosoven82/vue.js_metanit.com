@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="region" v-bind:class="{active: isActive, bounded: isBounded}">
+    </div>
+    <button v-on:click="isActive=!isActive">Toggle color</button>
+    <button v-on:click="isBounded=!isBounded">Toggle border</button>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        isActive: false,
+        isBounded: false
+      }
+    });
+  </script>
+</body>
+</html>

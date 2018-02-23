@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for3</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(phone, index) in phones">{{index +1}}. {{phone}}</li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //При переборе элементов с помощью дополнительного параметра в v-for мы можем
+    //получить индекс элемента в массиве, используя следующий синтаксис:
+    // v-for="(element, index) in array"
+    //Где element - это текущий перебираемый элемент в массиве array, а index - индекс этого элемента в массиве.
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        phones: ['iPhone 7', 'Galaaxy S8', 'Nokia N8', 'Xiaomi mi6']
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on4 params</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="increase(3)">+</button>
+    <button v-on:click="decrease(2)">-</button>
+    <p>{{counter}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+//Кроме того, мы можем передать в методы для обработки событий какие-то дополнительные значения:
+  //В данном случае увеличение переменной counter будет идти на 3, а уменьшение - на 2.
+    let app = new Vue ({
+      el: '#app',
+      data: {counter: 0},
+      methods: {
+        increase: function(n){
+          this.counter += n;
+        },
+        decrease: function(n){
+          if(this.counter > 0){
+            this.counter -= n;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

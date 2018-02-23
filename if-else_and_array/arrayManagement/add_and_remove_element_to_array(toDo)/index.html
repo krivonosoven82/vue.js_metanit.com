@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>add and remove</title>
+</head>
+<body>
+  <div id="app">
+    <p>
+      <input type="text" v-model="newPhone" />
+      <button v-on:click="phones.push(newPhone)">Добавить</button>
+    </p>
+    <ul>
+      <li v-for="(phone, index) in phones">
+        <p>{{phone}}
+          <button v-on:click="phones.splice(index, 1)">Удалить</button>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //Определим код для добавления нового элемента в массив и удаления из массива:
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        newPhone: '',
+        phones: ['iPhone 7', 'Galaxy S8', 'Nokia N8', 'Xiaomi Mi6']
+      }
+    });
+  </script>
+</body>
+</html>

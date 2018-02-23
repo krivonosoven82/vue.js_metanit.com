@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for5</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <template v-for="user in users">
+        <li>Name: {{user.name}}</li>
+        <li>Age: {{user.age}}</li>
+      </template>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Директиву v-for можно применить только к одному html-элементу.
+    //Если необходимо, чтобы для каждого объекта из массива создавалось несколько html-элементов,
+    //то блок этих элементов следует обертывать элементом template:
+
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        users: [
+          {name:'Tom', age:22},
+          {name:'Bob', age:31},
+          {name: 'Sam', age:28}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

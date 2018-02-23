@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>object and data</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{name}} - {{age}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Данные можно определять в виде внешнего объекта и затем передавать параметру data:
+    //let userData = {name: 'Tom', age:25};
+    //data: userData
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        name: 'Tom',
+        age: 25
+      }
+    });
+    //Данные можно определять в виде внешнего объекта и затем передавать параметру data:
+    //app.age=30;
+    //app.name='Bob';
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>computed</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="name" />
+    <input type="text" v-model="age" />
+    <p>Имя: {{name}}  Возраст: {{age}}</p>
+    <p>{{checkAge()}}</p>
+    <p>{{enabled}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Более оптимальным в данном случае будет использование вычисляемых свойств, которые определяются с помощью параметра computed:
+    //enabled представляет вычисляемое свойство.
+      //если мы изменим свойство age, изменится свойство enabled и повторно
+      //выполнится функция checkAge. Но если изменится свойство name, то свойство enabled не будет изменяться:
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        name: 'Tom',
+        age: 25
+      },
+      computed: {
+        enabled: function(){
+          console.log("computed");
+          if(this.age > 17){
+            return "доступ разрешен";
+          } else {
+            return "доступ запрещен";
+          }
+        }
+      },
+      methods: {
+        checkAge: function(){
+          console.log("method");
+          if(this.age > 17){
+            return "доступ разрешен";
+          } else {
+            return "доступ запрещен";
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

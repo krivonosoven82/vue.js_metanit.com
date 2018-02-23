@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>methods</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{name}} - {{age}}</p>
+    <p>{{welcome()}}</p>
+    <p>Name: {{displayName()}}</p>
+    <p>Factorial of 6 is equal to {{factorial(6)}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        name: 'Tom',
+        age: 25
+      },
+      methods: {
+        welcome: function(){
+          return "Welcome";
+        },
+        displayName: function(){
+          return this.name;
+        },
+        factorial: function(n){
+          let result = 1;
+          for (let i = 1; i <= n; i++){
+            result *= i;
+          }
+          return result;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

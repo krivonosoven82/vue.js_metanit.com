@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>interpolation</title>
+</head>
+<body>
+  <h1>Interpolation</h1>
+  <div id="app1">
+    <h2>App1</h2>
+    <p>{{name}} - {{age}}</p>
+  </div>
+  <br>
+  <div id="app2">
+    <h2>App2</h2>
+    <p>{{name}} - {{age}} - {{age > 25 ? 'Больше 25 лет' : '25 лет или меньше'}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Интерполяция
+    //Простейшую форму привязки представляет интерполяция строк.
+    //В этом случае значение, к которому выполняется привязка, заключается в двойные фигурные скобки:
+    //При рендеринге выражения со скобками {{}} будут заменяться соответствующими значениями:
+    let app = new Vue({
+        el: '#app1',
+        data: {name: 'Tom', age:25}
+    });
+  //При этом в интерполяции могут использоваться любые валидные выражения JavaScript.
+    let userData = {name: 'Bob', age: 99};
+    let app2 = new Vue ({
+      el: '#app2',
+      data: userData
+    });
+  </script>
+</body>
+</html>

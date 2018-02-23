@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>visible3</title>
+</head>
+<body>
+  <div id="app">
+    <template v-if="visible">
+      <h1>Загаловок 1</h1>
+      <p>Параграф 1</p>
+    </template>
+    <template v-else="visible">
+      <h1>Загаловок 2</h1>
+      <p>Параграф 2</p>
+    </template>
+    <button v-on:click="visible=!visible">{{visible ? 'К параграфу 2' : 'К параграфу 1'}}</button>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    // Так как выражение v-if является директивой, то оно может применяться
+      //только к одному элементу. Но что если мы хотим применить ее к группе элементов?
+      //В этом случае мы можем применить v-if для элемента <template>, который
+      //выступает в качестве обертки для группы элементов:
+    let app = new Vue({
+      el: '#app',
+      data: {
+        visible: true
+      }
+    });
+  </script>
+</body>
+</html>

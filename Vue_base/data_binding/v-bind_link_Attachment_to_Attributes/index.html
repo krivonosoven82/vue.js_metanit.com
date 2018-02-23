@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind link Attributes</title>
+</head>
+<body>
+  <div id="app">
+    <a v-bind:href="link">{{text}}</a>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    //Для привязки к атрибутам html-элементов предназначена директива v-bind:
+      //Для привязки к атрибуту после v-bind через двоеточие указывается непосредственно сам атрибут, к которому надо выполнять привязку.
+      //Для привязки атрибутов также можно использовать сокращенную форму:
+      //<a :href="link">{{text}}</a>
+      let app = new Vue ({
+        el: '#app',
+        data: {text: 'GitHub', link: 'https://github.com/krivonosoven82'}
+      });
+    </script>
+  </div>
+</body>
+</html>

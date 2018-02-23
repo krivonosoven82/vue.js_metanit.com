@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for6</title>
+</head>
+<body>
+  <div id="app">
+    <span v-for="n in 10">{{`${n} `}}</span>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Директиву v-for можно применить только к одному html-элементу.
+    //Если необходимо, чтобы для каждого объекта из массива создавалось несколько html-элементов,
+    //то блок этих элементов следует обертывать элементом template:
+
+    let app = new Vue ({
+      el: '#app'
+    });
+  </script>
+</body>
+</html>

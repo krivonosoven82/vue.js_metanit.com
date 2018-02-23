@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-model-1</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="name" />
+    <br><br>
+    <input type="text" v-model="name" />
+    <p>Name: {{name}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //Здесь на странице определено два текстовых поля, и оба они привязаны к свойству
+      // name из объекта Vue. В этом случае нам не надо добавлять к текстовому полю
+      //обработчик события ввода, и в этом обработчике менять вручную значение свойства name.
+      //При изменении текста в одном из полей автоматически изменится значение в другом.
+      //То есть сработает двусторонняя привязка.
+      let app = new Vue ({
+        el: '#app',
+        data: {
+          name: 'Tom',
+          age: '99'
+        }
+      });
+  </script>
+</body>
+</html>

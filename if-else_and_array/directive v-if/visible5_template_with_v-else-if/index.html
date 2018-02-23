@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>visible4</title>
+</head>
+<body>
+  <div id="app">
+    <input type="number" v-model="number" />
+    <template v-if="number==1">
+      <p>Один</p>
+    </template>
+    <template v-else-if="number==2">
+      <p>Два</p>
+    </template>
+    <template v-else-if="number>2 && number<7">
+      <p>Несколько</p>
+    </template>
+    <template v-else-if="number==0">
+      <p>Мало</p>
+    </template>
+    <template v-else-if="number<0">
+      <p>Очень мало</p>
+    </template>
+    <template v-else="number>7">
+      <p>Много</p>
+    </template>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //Аналогично можно использовать v-else-if вместе с template:
+    let app = new Vue({
+      el: '#app',
+      data: {
+        number: 1
+      }
+    });
+  </script>
+</body>
+</html>

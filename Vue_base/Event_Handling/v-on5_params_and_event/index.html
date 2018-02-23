@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on5 params and event</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="increase(3, $event)">+</button>
+    <button v-on:click="decrease(2, $event)">-</button>
+    <p>{{counter}}</p>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+//Также мы можем совместить передачу значений и объекта события:
+  //Для передачи объекта события в обработчик передается специальный объект $event.
+    let app = new Vue ({
+      el: '#app',
+      data: {counter: 0},
+      methods: {
+        increase: function(n, event){
+          console.log(event);
+          this.counter += n;
+        },
+        decrease: function(n, event){
+          console.log(event);
+          if(this.counter > 0){
+            this.counter -= n;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
