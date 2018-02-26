@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>select1</title>
+</head>
+<body>
+  <div id="app">
+    <select v-model="user">
+      <option>Tom</option>
+      <option>Bob</option>
+      <option>Sam</option>
+    </select>
+    <br>
+    <span>Выбрано: {{user}}</span>
+  </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    //В случае выше было бы более оптимально хранить данные в массиве и динамически создавать по элементам массива группу радиокнопок:
+      let app = new Vue ({
+        el: '#app',
+        data: {
+          user: ''
+        }
+      });
+    </script>
+</body>
+</html>

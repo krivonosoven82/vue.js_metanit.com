@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>select3</title>
+</head>
+<body>
+  <div id="app">
+    <select v-model="selectedUser">
+      <option v-for="user in users" v-bind:value="user">{{user.name}}</option>
+    </select>
+    <br>
+    <span v-if="selectedUser!==null">Выбрано: {{selectedUser.name}} - {{selectedUser.age}}</span>
+  </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    //Для динамического создания списка из массива применяется директива v-for,
+      //а для привязки значения к элементу списка - атрибут v-bind:value:
+      let app = new Vue ({
+        el: '#app',
+        data: {
+          users: [
+            {name: 'Tom', age: 22},
+            {name: 'Bob', age: 25},
+            {name: 'Sam', age: 28},
+            {name: 'Alice', age: 26}
+          ],
+          selectedUser: null
+        }
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>radio1</title>
+</head>
+<body>
+  <div id="app">
+    <label>
+      <input type="radio" value="Tom" v-model="user">
+      Tom
+    </label>
+    <br>
+    <label>
+      <input type="radio" value="Bob" v-model="user">
+      Bob
+    </label>
+    <br>
+    <label>
+      <input type="radio" value="Sam" v-model="user">
+      Sam
+    </label>
+    <br>
+    <span>Выбрано: {{user}}</span>
+  </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let app = new Vue ({
+        el: '#app',
+        data: {
+          user: ''
+        }
+      });
+    </script>
+</body>
+</html>

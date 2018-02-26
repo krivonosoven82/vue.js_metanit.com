@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>checked3</title>
+</head>
+<body>
+  <div id="app">
+    <label>
+      <input
+        type="checkbox"
+        value="Tom"
+        v-model="selectedUsers"
+      >Tom
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        value="Bob"
+        v-model="selectedUsers"
+      >Bob
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        value="Sam"
+        v-model="selectedUsers"
+      >Sam
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        value="Alice"
+        v-model="selectedUsers"
+      >Alice
+    </label>
+    <br>
+    <span>Выбрано: {{selectedUsers}}</span>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //Также группа флажков может быть привязана к одному массиву.
+      // В этом случае при отметке флажка его значение попадает в массив:
+    //В данном случае 4 флажка привязаны к массиву selectedUsers.
+      //Отметив определенный флажок, мы добавим его значение в массив.
+    let users = [];
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        selectedUsers: users
+      }
+    });
+  </script>
+</body>
+</html>

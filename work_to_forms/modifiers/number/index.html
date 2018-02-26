@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>number</title>
+</head>
+<body>
+  <div id="app">
+    <input type="number" v-model.number="age">
+    <span>Введено: {{age}}</span>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  //Модификатор .number позволяет автоматически конвертировать при вводе вводимое значение в число.
+    //Поскольку даже если мы установим у поля input атрибут type="number", то такое поле все равно будет возвращать строку:
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        age: 0
+      }
+    });
+  </script>
+</body>
+</html>

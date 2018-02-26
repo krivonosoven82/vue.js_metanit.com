@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>checked2</title>
+</head>
+<body>
+  <div id="app">
+    <label>
+      <input
+        type="checkbox"
+        v-model="light"
+        v-bind:true-value="on"
+        v-bind:false-value="off"
+      >
+      <span v-if="light===on">Выключить</span>
+      <span v-else>Включить</span>
+    </label>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //По умолчанию для отмеченного состояния используется значение true,
+      //а для неотмеченного - false. Но вместо них можно определить свои собственные значения
+      //для обоих состояний и между этими значениями переключаться:
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        on: true,   //С помощью атрибута v-bind:true-value="on" отмеченное состояние будет сопоставляться со свойством on.
+        off: false, //Соответственно в неотмеченном состоянии флажок приобретает значение off.
+        light: true //А само выбранное значение попадает в свойство light.
+      }
+    });
+  </script>
+</body>
+</html>

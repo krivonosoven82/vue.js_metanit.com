@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>checked4</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="app" class="col-md-4">
+    <template v-for="user in users">
+      <label>
+        <input type="checkbox" v-bind:value="user" v-model="selectedUsers">
+        {{user.name}}
+      </label>
+    </template>
+    <ul>
+      <li v-for="user in selectedUsers">{{user.name}} - {{user.age}}</li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    //флажок может быть привязан к целому объекту.
+      //Для динамической привязки у элемента html применяется атрибут v-bind:value:
+    //Здесь динамически для каждого объекта в массиве формируется флажок,
+      //а при выборе флажка объект попадет в массив selectedUsers.
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        users: [
+          {name: 'Tom', age: 22},
+          {name: 'Bob', age: 25},
+          {name: 'Sam', age: 28},
+          {name: 'Alice', age: 26}
+        ],
+        selectedUsers: []
+      }
+    });
+  </script>
+</body>
+</html>

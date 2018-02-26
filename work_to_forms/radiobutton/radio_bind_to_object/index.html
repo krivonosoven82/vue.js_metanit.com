@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>radio2</title>
+</head>
+<body>
+  <div id="app">
+    <label>
+      <input type="radio" v-bind:value="{name: 'Tom', age: 22}" v-model="user">
+      Tom
+    </label>
+    <br>
+    <label>
+      <input type="radio" v-bind:value="{name: 'Bob', age: 25}" v-model="user">
+      Bob
+    </label>
+    <br>
+    <label>
+      <input type="radio" v-bind:value="{name: 'Sam', age: 28}" v-model="user">
+      Sam
+    </label>
+    <br>
+    <span>Выбрано: {{user.name}} - {{user.age}}</span>
+  </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    //Также каждый из переключателей может быть привязан к сложному объекту.
+      // В этом случае используется атрибут v-bind:value. Результатом выбора соответственно также будет сложный объект:
+      let app = new Vue ({
+        el: '#app',
+        data: {
+          user: {}
+        }
+      });
+    </script>
+</body>
+</html>

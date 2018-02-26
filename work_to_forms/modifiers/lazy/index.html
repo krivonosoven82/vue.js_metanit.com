@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lazy</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="app" class="col-md-4">
+    <input type="text" v-model.lazy="name" class="form-control">
+    <span>Введено: {{name}}</span>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    let app = new Vue ({
+      el: '#app',
+      data: {
+        name: ''
+      }
+    });
+  </script>
+</body>
+</html>
